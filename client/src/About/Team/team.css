@@ -1,0 +1,109 @@
+
+.Team {
+    background-color: #a5bcf7;
+    background-image: url(./assets/ellipse.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    padding: 7vw;
+    margin-top: 40px;
+}
+
+
+.Team h2 {
+    text-align: center;
+    color: var(--secondary);
+    font-size: clamp(24px, 3vw, 40px);
+    line-height: clamp(28px, 3.8vw, 42px);
+    margin-bottom: 15px;
+}
+
+.members {
+    display: flex;
+    justify-content: space-between;
+}
+
+.member {
+    /* height: 504px; */
+    /* width: 392px; */
+
+    height: 35vw;
+    max-height: 525px;
+    width: 31%;
+
+    /* background-size: 100% 88%; */
+    background-repeat: no-repeat;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-position: center;
+    /* transform: scale(1); */
+    animation: zoomer 8s infinite;
+}
+
+.member:nth-child(1) {
+    background-image: url(./assets/member1.png);
+    /* background-size: 120%; */
+}
+.member:nth-child(2) {
+    background-image: url(./assets/member2.png);
+}
+.member:nth-child(3) {
+    background-image: url(./assets/member3.png);
+}
+
+.member div {
+    background-color: white;
+    border-top: 5px solid blue;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    padding: 15px 0;
+}
+
+@keyframes zoomer {
+    0% {background-size: 100% 88%}
+    10% {background-size: 100% 88%}
+    40% {background-size: 110% 97%}
+    70% {background-size: 110% 97%}
+    100% {background-size: 100% 88%}
+}
+
+@media (max-width: 770px) {
+    .members {
+        
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .members::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .member {
+        height: 70vw;
+        min-width: 60%;
+        margin: 0 20%;
+        scroll-snap-align: center;
+    }
+}
+
+@media (max-width: 475px) {
+    .member {
+        height: 107vw;
+        min-width: 96%;
+        margin: 0 2%;
+    }
+
+    .member div {
+        line-height: 25px;
+        padding: 10px 0;
+
+        font-size: smaller;
+    }
+}

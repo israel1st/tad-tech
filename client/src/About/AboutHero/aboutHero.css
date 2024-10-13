@@ -1,0 +1,64 @@
+.AboutHero {
+    display: flex;
+    height: 45vw;
+    max-height: 700px;
+    min-height: 260px;
+}
+
+.ah-first {
+    width: 50%;
+    background-color: rgb(41, 96, 236, 0.42);
+    color: var(--secondary);
+    padding: 5% 5%;
+}
+
+.ah-first div {
+    display: flex;
+    align-items: center;
+}
+
+.ah-first hr {
+    width: 30px;
+    border: 1px solid;
+    margin-right: 20px;
+}
+
+.ah-first h1 {
+    font-size: var(--h1-font);
+    line-height: var(--h1-line);
+    margin: 25px 0;
+}
+
+.ah-first p {
+    font-size: var(--p-font);
+    line-height: var(--p-line);
+}
+
+
+.ah-second {
+    width: 50%;
+    background-image: url(./assets/bg.png);
+    background-size: cover;
+}
+
+
+@media (max-width: 600px) {
+    .AboutHero {
+        flex-wrap: wrap-reverse;
+        height: auto;
+    }
+
+    .ah-first {
+        width: 100%;
+    }
+
+    .ah-second {
+        width: 100%;
+        height: 300px;
+    }
+
+    .space {
+        margin-top: 35px;
+        width: 170px;
+    }
+}

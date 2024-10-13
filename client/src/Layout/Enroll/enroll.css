@@ -1,0 +1,99 @@
+.Enroll {
+    background-color: var(--secondary);
+    display: flex;
+    margin-bottom: 20px;
+    transition: 1.5s;
+    /* transform: translateX(-100%); */
+}
+
+.enroll-1 {
+    width: 50%;
+    color: white;
+    padding: 150px;
+}
+
+.enroll-1 h1 {
+    font-size: 60px;
+    line-height: 50px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.enroll-1 h2 {
+    font-size: 20px;
+    line-height: 3vw;
+    font-weight: 500;
+    margin: 30px 0;
+}
+
+.enroll-1 button {
+    background-color: white;
+    color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 16px 24px;
+    /* margin-top: 20px; */
+}
+
+.enroll-1 button:hover {
+    background-color: white;
+    color: var(--primary);
+    opacity: 0.7;
+    border: 1px solid var(--primary);
+}
+
+.enroll-1-form {
+    display: none;
+
+    /* display: flex; */
+    justify-content: space-between;
+    /* margin-top: 50px; */
+}
+
+.enroll-1-form input {
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    width: 65%;
+    font-size: clamp(12px,1.2vw,21px);
+}
+
+.enroll-2 {
+    background-image: url(./assets/bgg.png);
+    width: 50%;
+}
+
+@media (max-width: 900px) {
+    .enroll-1 {
+        width: 100%;
+        background-image: url(./assets/bgg.png);
+        padding: 100px 40px;
+    }
+
+    .enroll-1-form {
+        display: block;
+    }
+    .enroll-2{
+        display: none;
+    }
+
+    .enroll-1 h1 {
+        font-size: 40px;
+        line-height: 35px;
+    }
+    
+    .enroll-1 h2 {
+        font-size: 4vw;
+        line-height: 3vw;
+        font-weight: 500;
+        margin: 30px 0;
+    }
+
+    .enroll-1 button {
+        border-radius: 6px;
+        font-size: 15px;
+        padding: 12px 18px;
+        /* margin-top: 20px; */
+    }
+}

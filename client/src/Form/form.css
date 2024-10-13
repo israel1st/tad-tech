@@ -1,0 +1,77 @@
+.contact-us-form {
+    background-color: var(--bg-color);
+    padding: 50px 0;
+}
+.contact-us-form form {
+    width: 80%;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    max-width: 600px;
+}
+
+.firstlast {
+    display: flex;
+    width: 100%;
+    gap: 5%;
+}
+
+.firstn, .lastn {
+    width: 100%;
+}
+
+.contact-us-form input, .contact-us-form textarea {
+    width: 100%;
+    padding: 12px 9px;
+    margin-bottom: 20px;
+    border: 0.6px solid #cecece;
+    border-radius: 4px;
+}
+
+.contact-us-form label {
+    font-size: 14px;
+    color: grey;
+    line-height: 35px;
+}
+
+.contact-us-form button {
+    background-color: var(--secondary);
+    padding: 10px 20px;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+}
+
+.snd-btn {
+    text-align: right;
+}
+
+.snd-bttn  {
+    display: flex;
+    /* background-color: red;  */
+    /* border: 1px solid red; */
+    justify-content: space-around;  
+}
+
+.join-modal .errors {
+    font-size: smaller;
+    margin: 10px 0;
+}
+
+/* @media (min-width: 2px) {
+    .App {
+        opacity: 0;
+    }
+} */
+
+@media (max-width: 500px) {
+    .contact-us-form button {
+        /* padding: 6px 4px; */
+        font-size: smaller;
+        margin-bottom: 10px;
+    }
+
+    .snd-bttn  {
+        display: block;
+    }
+}

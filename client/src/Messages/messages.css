@@ -1,0 +1,52 @@
+
+
+.MyLearning {
+    /* text-align: center; */
+    background-color: var(--bg-color);
+    padding: 10px 5vw;
+}
+
+.MyLearning hr {
+   margin: 10px 0;
+}
+
+.MyLearning h1 {
+font-size: clamp(18px, 3.5vw, 32px);
+}
+
+.MyLearning h2 {
+    font-size: clamp(14px, 3vw, 26px);
+    }
+    
+
+.weeklearns {
+    display: flex;
+    /* grid-template-columns: auto auto auto; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.weeklearn {
+background-color: #fff;
+width: 30%;
+padding: 30px;
+margin-bottom: 20px;
+box-shadow: 1px 1px 8px 2px lightgrey;
+border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .weeklearn {
+        width: 42%;
+    }
+}
+
+@media (max-width: 400px) {
+
+
+    .weeklearn {
+        width: 100%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}

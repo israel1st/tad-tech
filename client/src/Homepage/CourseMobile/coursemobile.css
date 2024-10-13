@@ -1,0 +1,89 @@
+
+.CourseMobile {
+    padding: 40px 7vw;
+    background-color: var(--bg-color);
+}
+
+.CourseMobile h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 40px);
+    line-height: clamp(28px, 3.8vw, 42px);
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.whole {
+    /* border: 1px solid red; */
+    /* height: 10.9vw !important; */
+    /* height: 500px !important; */
+    overflow: hidden;
+    min-height: 55px;
+    transition: 700ms;
+    position: relative;
+}
+
+.gettr {
+    animation: getter 1s ease-in-out forwards;
+}
+
+@keyframes getter {
+    0% {height: 10.9vw}
+    70% {height: 500px}
+    100% {height: auto}
+}
+
+.course-category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgb(128, 128, 128, 0.5);
+
+}
+
+.course-category img {
+    height: 10px;
+    transition: 700ms;
+}
+
+.course-category h3 {
+    font-size: clamp(15px, 4vw, 24px);
+}
+
+.draw {
+    /* display: none; */
+}
+
+.CourseMobile .arrow {
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    cursor: pointer;
+}
+
+.CourseMobile .arrow-b {
+    position: absolute;
+    top: 40%;
+    left: 20px;
+    cursor: pointer;
+    transform: scaleX(-1);
+}
+
+@media (max-width: 700px) {
+  
+    .CourseMobile .arrow {
+        right: 10%;
+    }
+
+    .CourseMobile .arrow-b {
+        left: 10%;
+    }
+
+    .CourseMobile .arrow img, .CourseMobile .arrow-b img {
+        height: 6vw;
+        opacity: 0.7;
+    }
+
+}

@@ -1,0 +1,510 @@
+.ServiceHero{
+    /* background-color: var(--bg-color); */
+}
+
+.service-banner {
+    width: 100%;
+    height: 46vw;
+    max-height: 650px;
+    background-color: rgb(41, 96, 236, 0.3);
+    
+
+    position: relative;
+    padding: 3% 0;
+} 
+
+.service-banner2 {
+    width: 99vw;
+    height: 46vw;
+    max-height: 690px;
+    background-color: #1e1e1e;
+    /* background-image: url(../../Homepage/Learn/assets/header.png); */
+    /* background: linear-gradient(135deg, rgb(248,106,3,1), rgb(41,96,236,1)); */
+
+    background-repeat: no-repeat;
+    background-position: 37% top;
+    background-size: cover;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3% 0;
+} 
+
+.service-banner .bgg {
+    background-image: url(./assets/bg-service.png);
+    /* background-color: rgba(167, 167, 270, 0.4); */
+    background-repeat: no-repeat;
+    background-position: 37% bottom;
+    background-size: contain;
+
+    position: absolute;
+    z-index: 5;
+
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.service-banner2 .bgg {
+    /* background-color: rgba(167, 167, 270, 0.4); */
+    
+
+    position: absolute;
+    z-index: 5;
+
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.service-banner2 .inner-banner {
+    /* display: none; */
+    width: 90%;
+    margin: 0 5%;
+    top: 5%;
+}
+
+.inner-banner {
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    height: 90%;
+    width: 36%;
+    margin: 0 32%;
+    border-radius: 10px;
+    z-index: 3;
+
+    position: absolute;
+}
+
+.sCourse {
+    background-color: white;
+    width: max-content;
+    padding: 15px 15px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.5);
+    
+    position: absolute;
+    z-index: 6;
+
+    font-size: clamp(12px, 1.6vw, 18px);
+    transition: .7s;
+    cursor: pointer;
+    
+
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sCourse img {
+    height: 30px;
+}
+
+.sCourse:nth-child(1) {
+    top: 8%; left: 15%;
+}
+.sCourse:nth-child(2) {
+    top: 8%; right: 10%;
+}
+.sCourse:nth-child(9) {
+    top: 13%; left: 40%;
+    display: none;
+}
+.sCourse:nth-child(3) {
+    top: 32%; left: 11%;
+}
+.sCourse:nth-child(4) {
+    top: 32%; right: 7%;
+}
+.sCourse:nth-child(10) {
+    top: 44%; left: 37%;
+}
+.sCourse:nth-child(5) {
+    top: 56%; left: 9%;
+}
+.sCourse:nth-child(6) {
+    top: 56%; right: 5%;
+}
+.sCourse:nth-child(11) {
+    top: 72%; left: 40%;
+}
+.sCourse:nth-child(7) {
+    top: 80%; left: 12%;
+}
+.sCourse:nth-child(8) {
+    top: 80%; right: 8%;
+}
+.sCourse:nth-child(12) {
+    top: 84%; left: 40%;
+}
+
+
+.sCourse:hover {
+    transform: scale(1.1);
+}
+
+.headline {
+    color: white;
+    z-index: 9;
+    position: relative;
+    /* border: 2px solid red; */
+    width: 86%;
+    margin: 0 auto;
+    display: none;
+}
+
+
+.design-a {
+    height: 9vw;
+    width: 9vw;
+    border-radius: 50%;
+    background-color: red;
+    background: linear-gradient(blue 10%, #1e1e1e 100%);
+
+    position: absolute;
+    top: 21%;
+    left: 18%;
+    animation: ballRoam 24s linear infinite;
+}
+.design-b {
+    height: 9vw;
+    width: 9vw;
+    border-radius: 50%;
+    background-color: red;
+    background: linear-gradient(#1e1e1e 10%,blue 100%);
+
+    position: absolute;
+    bottom: 21%;
+    right: 27%;
+    animation: ballRoam2 24s linear infinite;
+}
+
+.service-banner .design-a,
+.service-banner .design-b {
+    display: none;
+}
+
+.service-stats {
+    background-color: white;
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    justify-content: space-between;
+    padding: 25px 10px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+
+}
+
+.service-stat {
+    text-align: center;
+    width: 31%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    cursor: pointer;
+    transition: .7s;
+}
+
+.service-stat:hover {
+   transform: scale(1.1);
+   /* background-color: red; */
+}
+
+.service-stat:nth-child(2) {
+    border-left: 1px solid rgb(14, 14, 14, 0.1);
+    border-right: 1px solid rgb(14, 14, 14, 0.1);
+}
+
+.service-stat p {
+    color: rgba(14, 14, 44, 0.6);
+    font-size: var(--p-font);
+}
+
+.service-stat img {
+    height: 30px;
+    width: 30px;
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    padding: 3px;
+    margin-right: 4px;
+}
+
+@media (max-width: 550px) {
+.service-stat {
+    flex-wrap: wrap;
+}
+.service-stat div {
+    width: 100%;
+    margin-top: 3px;
+}
+
+.service-stat img {
+    background: none;
+    border-radius: 0;
+}
+
+}
+
+@media (max-width: 1199px) {
+
+    .service-banner {
+        height: 400px;
+    }
+    .service-banner2 {
+        height: 400px;
+        background: #1e1e1e;
+        /* background: linear-gradient(135deg, rgb(248,106,3,1), rgb(41,96,236,1)); */
+    }
+
+    .service-banner2 .bgg {
+        /* background-image: url(./assets/pexels.jpg); */
+        background-position: center;
+        /* background: linear-gradient(135deg, rgb(248,106,3,1), rgb(41,96,236,1)); */
+        /* background: none; */
+    }
+
+    .inner-banner, .design-a, .design-b {
+       display: none;
+    }
+
+    .serve-courses{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
+        /* grid-auto-columns: 1fr; */
+        /* flex-wrap: wrap; */
+        width: 90%;
+        /* border: 1px solid red; */
+        margin: 0 auto;
+        justify-content: space-between;
+        height: 100%;
+        align-content: space-between;
+        animation: inOut 1s;
+        /* padding: 0 20px; */
+        gap: 2%;
+    }
+
+    .sCourse {
+        /* display: block; */
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        /* height: 75px; */
+        /* width: 100px; */
+        width: 27vw;
+        max-width: 220px;
+        max-width: 220px;
+        height: 20vw;
+        max-height: 100px;
+        border-radius: 8px;
+        position: static;
+    }
+
+    .service-stats {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 0;
+    }
+
+    .sCourse:nth-child(9) {
+        top: 13%; left: 40%;
+        display: block;
+    }
+}
+@media (max-width: 530px) {
+.service-stat {
+    flex-wrap: wrap;
+}
+.service-stat div {
+    width: 100%;
+    margin-top: 3px;
+}
+}
+
+@keyframes inOut {
+    from {transform: scale(0.1);}
+    to {transform: scale(1);}
+}
+
+@keyframes ballRoam {
+    
+    0%{top: 21%;left: 18%;}
+    10%{top: 38%;left: 30%;}
+    20%{top: 55%;left: 42%;}
+    30%{top: 21%;left: 54%;}
+    40%{top: 38%;left: 66%;}
+    50%{top: 55%;left: 78%;}
+    60%{top: 21%;left: 66%;}
+    70%{top: 38%;left: 54%;}
+    80%{top: 55%;left: 42%;}
+    90%{top: 38%;left: 30%;}
+    100%{top: 21%;left: 18%;}
+}
+
+@keyframes ballRoam2 {
+    
+    0%{bottom: 21%; right: 17%;}
+    10%{bottom: 38%; right: 30%;}
+    20%{bottom: 55%; right: 42%;}
+    30%{bottom: 21%; right: 54%;}
+    40%{bottom: 38%; right: 66%;}
+    50%{bottom: 55%; right: 78%;}
+    60%{bottom: 21%; right: 66%;}
+    70%{bottom: 38%; right: 54%;}
+    80%{bottom: 55%; right: 42%;}
+    90%{bottom: 38%; right: 30%;}
+    100%{bottom: 21%; right: 17%;}
+   
+}
+
+@media (max-width: 500px) {
+
+    .serve-courses{
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
+        height: 100%;
+        align-content: space-around;
+        animation: inOut 1s;
+        /* padding: 20px 0; */
+    }
+
+    .sCourse {
+        /* display: block; */
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        /* height: 75px; */
+        /* width: 100px; */
+        width: 30%;
+        height: 27vw;
+        max-height: 88px;
+        border-radius: 8px;
+        position: static;
+    }
+
+}
+
+@media (max-width: 361px) {
+    .inner-banner {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+   .sCourse {
+    font-size: 10px;
+   }
+}
+
+@media (min-width: 1440px) {
+    .service-stats {
+        height: 120px;
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .service-banner2 .headline {
+        display: block;
+    }
+
+    .headline h1 {
+        font-size: clamp(16px, 3.2vw, 78px);
+    }
+
+    .service-banner2 .serve-courses{
+        display: flex;
+        gap: 9%;
+        overflow-x: scroll;
+        /* flex-wrap: wrap; */
+        /* border: 2px solid red; */
+        width: 85%;
+        margin: 0 auto;
+        padding: 10px 0;
+        justify-content: space-between;
+        /* height: 100%; */
+        animation: none;
+    
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .service-banner2 .serve-courses::-webkit-scrollbar {
+        display: none;
+      }
+    
+    .service-banner2 .sCourse {
+        width: 27%;
+        min-width: 27%;
+        height: 170px;
+        border-radius: 16px;
+        position: static;   
+        display: block;
+        text-align: center;
+
+        scroll-snap-align: start;
+    }
+    
+    .service-banner2 .sCourse img {
+            height: 80px;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    
+    .service-banner2 .serve-courses{
+        gap: 4%;
+        padding: 10px 0;
+        position: absolute;
+        bottom: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+  
+    
+    .service-banner2 .sCourse {
+        width: 22%;
+        min-width: 22%;
+        height: 170px;
+    }
+    
+    .service-banner2 .sCourse img {
+            height: 75px;
+    }
+}
+
+@media (min-width: 1700px) {
+    
+    .service-banner2 .serve-courses{
+        gap: 2.5%;
+        width: 80%;
+        padding: 10px 0;
+    }
+  
+    
+    .service-banner2 .sCourse {
+        width: 18%;
+        min-width: 18%;
+        height: 170px;
+    }
+    
+    .service-banner2 .sCourse img {
+            height: 75px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .service-banner2 {
+        /* width: 100%; */
+        height: 900px;
+        max-height: unset;
+    } 
+}

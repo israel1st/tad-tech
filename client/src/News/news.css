@@ -1,0 +1,232 @@
+
+
+    .news::-webkit-scrollbar {
+        width: 10px;
+      }
+    .news::-webkit-scrollbar-track {
+        background: grey;
+        border-radius: 4px;
+
+      }
+    .news::-webkit-scrollbar-thumb {
+       background: var(--secondary);
+       border-radius: 4px;
+      }
+
+.news-1 {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    /* background-color: white; */
+    border-bottom: 1px solid ;
+    padding: 10px 10px;
+    /* border-radius: 5px; */
+    margin-bottom: 20px;
+    font-size: smaller;
+    color: unset;
+    text-decoration: none;
+    cursor: pointer;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+
+}
+
+.news-1 img {
+    height: 160px;
+    min-width: 135.5px;
+    object-fit: cover;
+    transition: .7s;
+
+}
+
+.news-1 h4 {
+    margin-top: 15px;
+    line-height: 24px;
+    transition: .7s;
+
+}
+
+.news-1 button {
+    padding: 4px 6px;
+    border: none;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+
+.news-1 p {
+    color: var(--tertiary);
+}
+
+.news-1:hover h4,
+.news-1:hover p {
+    color: var(--primary);
+}
+
+.news-1:hover img {
+    transform: scale(1.02);
+    filter: brightness(1.5);
+}
+
+.reader {
+    display: flex;
+    background-color: var(--bg-color);
+    padding: 45px 5vw;
+    gap: 30px;
+}
+
+.reader-1 img {
+    max-width: 500px;
+    /* width: 90vw; */
+}
+
+.reader p {
+    font-size: clamp(14px, 1.3vw, 20px);
+    line-height: clamp(18px, 2.1vw, 30px);
+    margin: 15px 0;
+    color: var(--tertiary);
+}
+
+.reader-2{
+    width: 75%;
+    margin: 0 auto;
+    /* border: 2px solid red; */
+}
+
+.reader-2 div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reader-2 img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    /* max-width: 500px; */
+    margin: 10px auto;
+    display: block;
+}
+
+.postnews {
+    display: flex;
+}
+
+.news-img-previews{
+width: 20%;
+height: 65vh;
+overflow-y: scroll;
+}
+
+.news-img-previews img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.main-news-preview {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px auto;
+}
+
+
+/* .Post form {
+    padding: 30px;
+    border: 1px solid red;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Post input,
+.Post textarea {
+    width: 200px;
+    width: 90%;
+    padding: 10px 0;
+}
+
+.Post button {
+    padding: 8px 25px;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    text-align: right; 
+} */
+
+
+
+@media (max-width: 1000px) {
+    .news-1 img {
+        height: 120px;
+        width: 128px;
+    }
+
+    .news-1 h4 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 780px) {
+
+    .news {
+        width: 100%;
+        /* border: 2px solid red; */
+        display: flex;
+        overflow-x: scroll;
+        max-width: none;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .news::-webkit-scrollbar {
+        display: none;
+      }
+
+    .news-1 {
+        /* width: 100%; */
+        min-width: 263px;
+        margin: 10px 3%;
+        gap: 5%;
+        scroll-snap-align: start;
+        /* flex-direction: column; */
+        /* text-align: center; */
+    }
+
+    .news-1 img {
+        height: 80px;
+        width: 85.5px;
+        /* margin: 5px auto; */
+    }
+
+    .reader {
+        display: flex;
+        background-color: var(--bg-color);
+        padding: 45px 5vw;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    .reader-1 img {
+        /* max-width: 500px; */
+        width: 100%;
+    }
+}
+
+@media (min-width: 781px) {
+    .news {
+        height: 780px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        /* scroll-snap-type: y mandatory; */
+
+    }
+
+
+}

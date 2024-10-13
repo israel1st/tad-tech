@@ -1,0 +1,485 @@
+
+
+
+.ClassApp {
+
+}
+
+.classapp-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    top: 55px;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    background-color: white;
+}
+
+.classapp-nav h3 {
+    font-size: var(--h3-font);
+    color: var(--secondary);
+}
+
+.classapp-nav button {
+    padding: 6px 6px;
+    border: none;
+    margin-left: 6px;
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.classapp-nav div button {
+    display: none;
+}
+
+.classapp-body {
+display: flex;
+margin-top: 35px;
+
+}
+
+
+            
+.class-members {
+width: 20%;
+height: 800px;
+background-color: var(--bg-color);
+padding: 20px;
+font-size: smaller;
+}
+
+.class-members li {
+    /* list-style-type: "\25B6"; */
+    list-style-type: none;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+    color: var(--primary);
+    /* padding-left: 10px; */
+
+}
+.class-members li span {
+    /* position: relative;
+    left: 10px; */
+}
+
+.class-members h4 {
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: var(--secondary);
+}
+    
+.main-classbox {
+    /* border: 1px solid green; */
+    /* position: relative; */
+    width: 55%;
+    /* height: auto; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-edit {
+    min-height: 70vh;
+    background-color: black;
+    border: 1px solid;
+    color: white;
+    width: 100%;
+
+}
+
+.refresh {
+    width: 20px;
+    color: white;
+    background-color: var(--secondary);
+    border:none;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.class-messages {
+    /* border: 2px solid red; */
+    position: relative;
+
+    overflow-y: scroll;
+    min-height: 50vh;
+    max-height: 600px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.class-messages::-webkit-scrollbar {
+    width: 10px;
+  }
+.class-messages::-webkit-scrollbar-track {
+    background: grey;
+    border-radius: 4px;
+
+  }
+.class-messages::-webkit-scrollbar-thumb {
+   background: var(--secondary);
+   border-radius: 4px;
+  }
+
+.class-questions{
+    background-color: var(--bg-color);
+    /* background-color: rgb(122, 123, 127); */
+    width: 25%;
+    /* height: 800px; */
+    padding: 20px;
+}
+
+.class-questions form {
+    text-align: right;
+    
+}
+
+.class-questions textarea {
+    padding: 8px;
+    width: 100%;
+    /* height: 60px; */
+    margin-bottom: 8px;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+
+.class-questions button, .send-image {
+
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 7px;
+    width: 35%;
+    margin-bottom: 8px;
+}
+
+.all-class-questions {
+    max-height: 55vh;
+    /* border: 2px solid red; */
+    overflow-y: scroll;
+}
+
+.class-comment{
+    background-color: lightgrey;
+    /* background-color: rgb(0, 0, 0); */
+    padding: 10px 10px;
+    border-radius: 5px;
+    /* color: white; */
+    margin-bottom: 20px;
+    font-size: smaller;
+    box-shadow: 2.5px 2.5px 5px 1px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    overflow: hidden;
+
+}
+
+.class-comment h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-comment h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-comment i {
+    color:#000000b3;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+.quest {
+margin-left: 10px;
+}
+
+.ans {
+    text-align: right;
+    /* background-color: var(--primary); */
+    margin-left: auto;
+    margin-right: 10px;
+
+}
+
+.class-comment p {
+    background-color: #000000b3;
+    cursor: pointer;
+    color: white;
+    padding: 6px;
+    margin-top: 5px;
+    border-radius: 7px;
+    width: 85%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.class-comment h2:hover span{
+    display: inline;
+}
+
+.class-comment h2 span{
+    color: red;
+    margin-left: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+.class-comment p:hover span{
+    display: inline;
+}
+
+.class-comment p span{
+    color: rgb(255, 145, 0);
+    margin-left: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+
+
+.class-comment h4 {
+    color: black;
+}
+
+.class-comment img {
+    background-color: #000000b3;
+    padding: 7px;
+    margin-top: 5px;
+    border-radius: 7px;
+    width: 85%;
+    max-width: 500px;
+}
+
+.class-comment button {
+    color: white;
+    background-color: blue;
+    padding: 9px 4px;
+    border: none;
+    margin-left: 10px;
+    width: 20%;
+}
+
+.class-comment input {
+   
+    padding: 7px 4px;
+    width: 70%;
+}
+
+.date-stamp {
+    color: blue;
+    margin-top: 10px;
+}
+
+
+
+.instructor-modal {
+    position: sticky;
+    left: 6vw;
+    bottom: 5px;
+    /* display: inline; */
+
+    color: white;
+    background: var(--secondary);
+    padding: 10px 0px;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 55px;
+    font-size: 18px;
+    cursor: pointer;
+    /* transform: translateX(28%); */
+}
+
+.instructor-modal-2 {
+    position: sticky;
+    left: 65vw;
+    /* transform: translateX(-20%); */
+
+    bottom: 5px;
+    margin-top: -42px;
+
+
+    color: white;
+    background: var(--secondary);
+    padding: 8px 0px;
+    border: 1px solid white;
+    border-radius: 6px;
+    width: 45px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.instructor-form {
+    width: 48%;
+    min-width: 280px;
+    position: fixed;
+    bottom: 190px;
+    /* height: 250px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 7px;
+    gap: 20px;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 2.5px 2.5px 5px 1px rgba(0, 0, 0, 0.25);
+
+    /* transform: translateX(50%); */
+    left: 50%;
+    transition: .7s;
+}
+
+.instructor-form p {
+    cursor: pointer;
+}
+
+.instructor-form input, .instructor-form select {
+    /* background-color: red; */
+    padding: 14px 10px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.instructor-form button {
+    color: white;
+    background-color: blue;
+    padding: 14px 10px;
+    border: none;
+    border-radius: 2px;
+    width: 20%;
+    min-width: 180px;
+}
+
+.p-tops h2 {
+    color: var(--secondary);
+    font-size: clamp(14px, 1.8vw, 26px);
+}
+
+.p-tops b {
+    font-size: 13px;
+}
+
+.Topic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0px 5%;
+}
+
+.Topic h2 {
+    font-size: var(--h2-font);
+    color: white;
+    background-color: var(--secondary);
+    width: 111%;
+    padding: 15px 0;
+}
+
+.Topic h3 {
+    font-size: var(--h3-font);
+    margin-bottom: 30px;
+    /* color: black; */
+    /* background-color: var(--primary); */
+    /* width: 111%; */
+    /* padding: 15px 0; */
+}
+
+.Topic p {
+    background-color: #000000b3;
+    cursor: pointer;
+    color: white;
+    padding: 6px;
+    margin-top: 5px;
+    border-radius: 7px;
+    width: 85%;
+    max-width: 500px;
+
+   display: flex;
+   justify-content: space-between;
+}
+
+.Topic img {
+    background-color: #000000b3;
+    padding: 7px;
+    margin-top: 5px;
+    border-radius: 7px;
+    width: 85%;
+    max-width: 500px;
+}
+
+
+@media (max-width: 830px) {
+    .class-members {
+        position: fixed;
+        width: 220px;
+        transform: translateX(-100%);
+        transition: .7s;
+        z-index: 4;
+
+        top: 100px;
+        /* height: 90vh; */
+    }
+
+    .main-classbox {
+        width: 65%;
+    }
+
+    .class-questions {
+        width: 35%;
+        transition: .7s;
+    }
+
+    .classapp-nav div button:nth-child(1){
+        display: inline;
+    }
+
+    .class-comment input {
+        width: 100%;
+    }
+
+    .class-comment button {
+        display: block;
+        margin-top: 10px;
+        margin-left: 0px;
+        padding: 6px 4px;
+        border-radius: 0px;
+        width: 40%;
+    }
+}
+
+@media (max-width: 615px) {
+
+    .main-classbox {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .class-questions {
+        position: fixed;
+        width: 250px;
+        transform: translateX(100%);
+        top: 100px;
+        right: 0%;
+        height: 90vh;
+        overflow-y: scroll;
+        z-index: 4;
+    }
+
+    .classapp-nav div button:nth-child(2){
+        display: inline;
+    }
+
+
+}

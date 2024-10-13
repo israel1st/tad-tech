@@ -1,0 +1,54 @@
+
+
+.about2 {
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-2bg {
+    width: 45%;
+    /* height: 400px; */
+    background-image: url(./assets/rec25.png);
+    background-size: cover;
+    background-position: center;
+    height: 30vw;
+    max-height: 500px;
+}
+
+.about-2txt {
+    width: 45%;
+}
+
+.about-2txt h2 {
+    text-align: center;
+    color: var(--secondary);
+    font-size: clamp(18px, 2.5vw, 32px);
+    line-height: clamp(24px, 3.4vw, 36px);
+    margin-bottom: 15px;
+}
+
+.about-2txt p {
+    color: grey;
+    font-size: clamp(14px,1.5vw,20px);
+    line-height: clamp(20px,2.3vw,28px);
+}
+
+@media (max-width: 768px) {
+    .about2 {
+        flex-wrap: wrap;
+    }
+    
+    .about-2bg {
+        width: 94%;
+        margin: 20px auto;
+        height: 250px;
+        max-width: 500px;
+    }
+    
+    .about-2txt {
+        width: 94%;
+        margin: 20px auto;
+        max-width: 500px;
+    }
+}

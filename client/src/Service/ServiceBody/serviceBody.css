@@ -1,0 +1,258 @@
+
+.sbody-1 {
+    width: 60%;
+    margin: 70px auto;
+    /* min-width: ; */
+}
+
+.sbody-1 h1 {
+    color: var(--secondary);
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 40px);
+    line-height: clamp(40px, 5vw, 42px);
+}
+
+.sbody-1 p {
+    color: grey;
+    font-size: clamp(14px,1.4vw,22px);
+    /* line-height: clamp(20px,3vw,36px); */
+    line-height: clamp(24px,2.2vw,40px);
+
+    text-align: center;
+}
+
+.sbody-1 div {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 10px auto;
+    max-width: 450px;
+}
+
+.sbody-1 button {
+    background-color: var(--secondary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.sbody-1 span {
+    display: flex;
+    justify-content: space-between;
+    /* width: 45%; */
+    align-items: center;
+    width: 170px;
+    margin-top: 20px;
+}
+
+.sbody-2 {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sbody-2 h4 {
+    color: var(--secondary);
+    font-size: clamp(18px, 1.5vw, 30px);
+    margin-bottom: 15px;
+}
+
+.sbody-2 img {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.get1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.get1 p, .sframe p {
+    color: grey;
+    font-size: clamp(14px,1.4vw,22px);
+    /* line-height: clamp(25px,4vw,36px); */
+    line-height: clamp(24px,2.2vw,40px);
+
+}
+
+.get2 {
+    width: 50%;
+    background-image: url(./assets/back.png);
+    background-position: top right;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    /* border: 2px solid red; */
+    text-align: center;
+    max-width: 600px;
+}
+
+.sbody-3 h2 {
+    color: var(--secondary);
+    font-size: clamp(24px, 2vw, 36px);
+    margin: 30px 0;
+    text-align: center;
+}
+
+.sbody-3 {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.sframe {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sframe iframe {
+    width: 45%;
+    height: 20vw;
+    min-height: 200px;
+    /* border: 1px solid red; */
+    border-radius: 3px;
+}
+
+.sframe div {
+    width: 45%;
+    /* height: 150px; */
+    /* border: 1px solid red; */
+}
+
+.sframe li {
+    color: grey;
+    font-size: clamp(10px,1.5vw,18px);
+    line-height: clamp(18px,3vw,30px);
+    padding-left: 25px;
+    list-style: none;
+
+    background-image: url(./assets/tick.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: clamp(10px,1.5vw,18px);
+}
+
+
+.sbody-4 {
+    padding: 50px 10%;
+    background-color: var(--bg-color);
+}
+
+.sbody-4 h5 {
+    color: var(--secondary);
+}
+
+.sTest {
+    display: flex;
+    /* border: 1px solid red; */
+    /* justify-content: space-between; */
+    overflow-x: scroll;
+    gap: 60px;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.sTest::-webkit-scrollbar {
+    display: none;
+}
+
+.tester {
+    min-width: 45%;
+    padding: 60px 0;
+    /* min-width: 260px; */
+    /* max-width: 450px; */
+
+    scroll-snap-align: start;
+}
+
+.tester p {
+    color: grey;
+    font-size: var(--card-p-font);
+    line-height: clamp(--card-p-line);
+}
+
+.in-tester {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.sbutton {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.sbutton button {
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    height: 30px;
+    width: 30px;
+    background: none;
+    border-radius: 50%;
+    margin-top: 20px;
+    /* vertical-align: 4px; */
+}
+
+.sbody-4 h2 {
+    font-size: clamp(20px, 2.7vw, 40px);
+    line-height: clamp(26px, 3.5vw, 42px);
+
+    margin-top: 15px;
+}
+
+@media (max-width: 500px) {
+
+    .sbody-1 {
+        width: 85%;
+    }
+
+    .sbody-1 div {
+        flex-wrap: wrap;
+        /* border: 1px solid red; */
+        justify-content: center;
+    }
+
+    .sbody-2 {
+        flex-wrap: wrap;
+    }
+
+    .get1, .get2 {
+        width: 100%;
+    }
+
+    .sframe {
+       flex-wrap: wrap;
+    }
+    
+    .sframe iframe {
+        width: 100%;
+    }
+    
+    .sframe div {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .tester {
+        min-width: 100%;
+    }
+}
+
+@media (min-width: 1500px) {
+
+    .tester {
+        min-width: 33%;
+    }
+}
