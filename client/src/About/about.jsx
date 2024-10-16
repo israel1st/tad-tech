@@ -32,7 +32,7 @@ function About() {
                 </div>
                 <div className="about-2txt">
                     <h2>
-                        Lorem Ipsum is simply dummy text of the printing and types
+                        Lorem Ipsum is simply dummy text of the printing and typ
                     </h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
