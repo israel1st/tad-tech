@@ -93,6 +93,9 @@ function App() {
       .then((response) => {
         // console.log(response.data)
         setInstructorMessages(response.data);
+      })
+      .catch(err => {
+        console.log(err);
       });
 
   };
