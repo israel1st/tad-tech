@@ -1,5 +1,4 @@
 module.exports = {
-  mongoURI: "mongodb+srv://israelbasseyib_db_user:K8C75QxakUwldssi@cluster0.4zr0ck6.mongodb.net/tad-tech?appName=Cluster0",
-  secretOrKey: "localdevsecret123"
+  mongoURI: process.env.MONGO_URI,
+  secretOrKey: process.env.JWT_SECRET
 };
-
