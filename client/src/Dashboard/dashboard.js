@@ -34,12 +34,17 @@ function Dashboard() {
 
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug","Sep","Oct","Nov","Dec"]
-let dateFormat =
-months[parseInt(cookies.JoinDate.slice(5,7))-1]
-+ " "
-+ cookies.JoinDate.slice(8,10)
-+ ", " 
-+cookies.JoinDate.slice(0,4);
+
+// Guard against a missing JoinDate cookie
+let dateFormat = "";
+if (cookies.JoinDate) {
+    dateFormat =
+    months[parseInt(cookies.JoinDate.slice(5,7))-1]
+    + " "
+    + cookies.JoinDate.slice(8,10)
+    + ", " 
+    + cookies.JoinDate.slice(0,4);
+}
 
 // console.log(dateFormat);
 
@@ -55,7 +60,12 @@ const [user, setUser] = useState([]);
 const getUser = (a, b) => {
     axios.get("api/users/fetchusers")
         .then((response) => {
-            setUser(response.data.filter(user => { return user.email === cookies.Email }));
+            if (Array.isArray(response.data)) {
+                setUser(response.data.filter(user => { return user.email === cookies.Email }));
+            }
+        })
+        .catch(err => {
+            console.log(err);
         });
 };
 
@@ -76,14 +86,14 @@ useEffect(() => {
                 <div className='reg-course'>
                     <h2>Profile Details</h2> <br /> <br />
                     {
-                user[0]?.profileimage?  <img className='prof-dpp' src={`/files/${user[0]?.profileimage}`}/> : <h1 className='dpp-alt'>{cookies.FirstName.slice(0,1)}{cookies.LastName.slice(0,1)}</h1>
+                user[0]?.profileimage?  <img className='prof-dpp' src={`/files/${user[0]?.profileimage}`}/> : <h1 className='dpp-alt'>{cookies.FirstName?.slice(0,1)}{cookies.LastName?.slice(0,1)}</h1>
               }
                
                
 
-                    <h3>{cookies.Role.charAt(0).toUpperCase()+ cookies.Role.slice(1)}</h3>
-                    <p><b>First Name:</b> {cookies.FirstName.charAt(0).toUpperCase()+ cookies.FirstName.slice(1)}</p> <br />
-                    <p><b>Last Name:</b> {cookies.LastName.charAt(0).toUpperCase()+ cookies.LastName.slice(1)}</p> <br />
+                    <h3>{cookies.Role ? cookies.Role.charAt(0).toUpperCase() + cookies.Role.slice(1) : ""}</h3>
+                    <p><b>First Name:</b> {cookies.FirstName ? cookies.FirstName.charAt(0).toUpperCase() + cookies.FirstName.slice(1) : ""}</p> <br />
+                    <p><b>Last Name:</b> {cookies.LastName ? cookies.LastName.charAt(0).toUpperCase() + cookies.LastName.slice(1) : ""}</p> <br />
                     <p><b>Email:</b> <i>{cookies.Email}</i></p> <br />
                     {/* <p><b>Address:</b> 50 Apara Link Road, Port Harcourt</p> <br /> */}
                     <p><b>Registered:</b> {dateFormat}</p> <br />
@@ -102,7 +112,9 @@ useEffect(() => {
                     <p><b>Start Date:</b> 11th September 2022</p> <br />
                     <p><b>End Date:</b> 10th January 2023</p> <br />
                     <p><b>Current Week:</b> 5</p> <br />
-                    <Link to={`/class/${user[0]?.course.replace(/\s/g,'').toLowerCase()}`}><button>Enter Class</button></Link>
+                    {user[0]?.course && (
+                        <Link to={`/class/${user[0].course.replace(/\s/g,'').toLowerCase()}`}><button>Enter Class</button></Link>
+                    )}
                 </div>
              
             </div>

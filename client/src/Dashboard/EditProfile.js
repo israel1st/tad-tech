@@ -36,7 +36,12 @@ function EditProfile() {
     const getUser = (a, b) => {
         axios.get("api/users/fetchusers")
             .then((response) => {
-                setUser(response.data.filter(user => { return user.email === cookies.Email }));
+                if (Array.isArray(response.data)) {
+                    setUser(response.data.filter(user => { return user.email === cookies.Email }));
+                }
+            })
+            .catch(err => {
+                console.log(err);
             });
     };
 
