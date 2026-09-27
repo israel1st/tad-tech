@@ -83,7 +83,11 @@ const loginUser = (e) => {
         setCookie('Role', res.data.userRole, { path: '/' });
         setCookie('JoinDate', res.data.userJoinDate, { path: '/' });
 
-        navigate('/dashboard');
+        if (res.data.userRole === "admin") {
+    navigate('/admin');
+} else {
+    navigate('/dashboard');
+        }
         window.location.reload();
 
       })
