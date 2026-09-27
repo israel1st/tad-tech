@@ -4,9 +4,6 @@ import { HashRouter, BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
-import axios from "axios";
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || "";
-console.log("API Base URL is:", axios.defaults.baseURL);
 
 import { CookiesProvider } from "react-cookie";
 
@@ -64,6 +61,9 @@ import PrivateRoute from "./Private-Route/PrivateRoute";
 import AdminRoute from "./Private-Route/AdminRoute";
 import HasPaidRoute from "./Private-Route/hasPaidRoute";
 
+import axios from "axios";
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || "";
+console.log("API Base URL is:", axios.defaults.baseURL);
 
 
 function App() {
