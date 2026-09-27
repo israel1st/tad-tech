@@ -1,44 +1,33 @@
 import { Navigate } from 'react-router-dom';
-import { useCookies, useLocation } from 'react-cookie';
-
+import { useCookies } from 'react-cookie';
 import { useState, useEffect } from 'react';
-
 import axios from 'axios';
 
-
-import SignIn from '../SignIN/signIn';
-
-function HasPaidRoute({ children, userr }) {
-    const [cookies, setCookie, removeCookie] = useCookies(['user']);
-
+function HasPaidRoute({ children }) {
+    const [cookies] = useCookies(['user']);
     const [user, setUser] = useState("loading");
-
 
     const getUser = () => {
         axios.get("api/users/fetchusers")
             .then((response) => {
-                setUser(response.data.filter(user => { return user.email === cookies.Email })[0].hasPaid);
+                const match = response.data.find(u => u.email === cookies.Email);
+                setUser(match ? match.hasPaid : false);
+            })
+            .catch(err => {
+                console.log(err);
+                setUser(false);
             });
     };
 
-    // useEffect(() => {
-    //     getUser()
-    // }, []);
+    useEffect(() => {
+        getUser();
+    }, []);
 
-                console.log(user);
-                if (user==="loading"){
-                    getUser()
-                } else if (user){
-                    return children
-                } else {
-                    return <Navigate to="/application" />
-                }
-
+    if (user === "loading") {
+        return <p>Loading...</p>;
+    }
 
     return user ? children : <Navigate to="/application" />;
-    
-
 }
-
 
 export default HasPaidRoute;

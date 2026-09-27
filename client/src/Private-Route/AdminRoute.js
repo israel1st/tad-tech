@@ -9,7 +9,7 @@ function AdminRoute({ children }) {
     // const isAuthenticated = (cookies.isAuthenticated === 'true');
 
 
-    return cookies.Email==="eustacedyke@gmail.com" ? children : <Navigate to="/" />;
+    return cookies.Role === "admin" ? children : <Navigate to="/" />;
     
 
 }
