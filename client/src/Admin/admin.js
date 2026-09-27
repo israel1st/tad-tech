@@ -360,4 +360,42 @@ function Admin() {
                                     </td>
                                     <td>{instructor.duration} weeks
                                         <input
-                                            onChange={(e) => { setDuration(e.target.value) }
+                                            onChange={(e) => { setDuration(e.target.value) }}
+                                            style={{ display: adminEdit === instructors.indexOf(instructor) + 1 ? "" : "none" }} className='admin-edit' type='number' placeholder='duration' />
+                                    </td>
+
+                                    <td>
+                                        <button style={{ display: adminEdit === instructors.indexOf(instructor) + 1 ? "none" : "" }} onClick={() => { setAdminDelete(instructors.indexOf(instructor) + 1) }}>delete</button>
+                                        {
+                                            adminEdit === instructors.indexOf(instructor) + 1 ? <>
+                                                <button onClick={() => { updateUser(instructor._id) }}>Update</button>
+                                                <button onClick={() => { setAdminEdit(0) }}>Cancel</button>
+                                            </> : <button onClick={() => { setAdminEdit(instructors.indexOf(instructor) + 1); setAdminDelete(0) }}>Edit</button>
+
+                                        }
+
+                                        <div className='delete-modal'
+                                            style={{ display: adminDelete === instructors.indexOf(instructor) + 1 ? "" : "none" }}
+                                        >
+                                            <p>Are you sure you want to delete this user?</p>
+                                            <h5><i>"{instructor.firstname} {instructor.lastname}"</i></h5> <br />
+                                            <button onClick={() => { setAdminDelete(0) }}>No</button> &nbsp; &nbsp;
+                                            <button onClick={() => { deleteUser(instructor._id) }}>Yes</button>
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+                            )
+                        })
+                        }
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    );
+
+}
+
+export default Admin;
