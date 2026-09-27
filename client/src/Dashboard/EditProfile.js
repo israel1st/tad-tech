@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import LoadingButton from '../Buttons/LoadingButton';
 
 import axios from 'axios';
 
@@ -55,6 +56,7 @@ function EditProfile() {
 
 
     const [image, setImage] = useState();
+    const [imageLoading, setImageLoading] = useState(false);
 
     async function sendImg(e) {
         e.preventDefault();
@@ -72,6 +74,7 @@ function EditProfile() {
   if (image === undefined) {
     alert('Please, choose a file');
   } else {
+     setImageLoading(true);
      await axios.post("/api/users/uploaddp", data, {
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -81,6 +84,7 @@ function EditProfile() {
         })
             .catch(err => {
                 console.log(err.response)
+                setImageLoading(false);
             })
 
   }
@@ -118,6 +122,7 @@ function EditProfile() {
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
     const [errors, setErrors] = useState({});
+    const [passwordLoading, setPasswordLoading] = useState(false);
 
     const newPsw = {
         id: user[0]?._id,
@@ -129,6 +134,7 @@ function EditProfile() {
 
     const updatePassword = (e) => {
         e.preventDefault();
+        setPasswordLoading(true);
 
         axios
           .post("/api/users/updatepassword", newPsw)
@@ -139,6 +145,7 @@ function EditProfile() {
             console.log(res)
             }})
           .catch((err) => {
+            setPasswordLoading(false);
             const errors = err.response.data;
             setErrors(value => errors)
     
@@ -170,9 +177,7 @@ function EditProfile() {
                 />
                 <br/>
 
-                <button
-                   
-                >change</button>
+                <LoadingButton loading={imageLoading} loadingText="Updating...">change</LoadingButton>
             </form>
 
             <br/> <br/>
@@ -207,9 +212,7 @@ function EditProfile() {
                    <p className='errors'>{errors.Psw2}</p> 
                    <p className='errors'>{errors.samepassword}</p>
                  <br/>
-                <button
-                    
-                >change</button>
+                <LoadingButton loading={passwordLoading} loadingText="Updating...">change</LoadingButton>
             </form>
         </div>
     )

@@ -8,6 +8,7 @@ import axios from "axios";
 
 import style from './signUp.css';
 
+import LoadingButton from '../Buttons/LoadingButton';
 
 //Images
 import logo from "../Layout/Navigation/assets/newLogo.png";
@@ -32,6 +33,7 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
     const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
 
     const newUser = {
             firstname: fName,
@@ -44,11 +46,13 @@ function SignUp() {
 
     const registerUser = (e) => {
         e.preventDefault();
+        setLoading(true);
 
         axios
           .post("/api/users/register", newUser)
           .then(res => navigate('/signin'))
           .catch((err) => {
+            setLoading(false);
             const errors = err.response.data;
             setErrors(value => errors)
             console.log(errors.Email)
@@ -125,7 +129,7 @@ function SignUp() {
                         <p className='errors'>{errors.Psw2}</p>
                     </div>
                     <div className="snd-btn">
-                        <button>Submit</button>
+                        <LoadingButton loading={loading} loadingText="Signing up...">Submit</LoadingButton>
                     </div>
 
                 </form>

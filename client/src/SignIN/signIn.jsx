@@ -12,6 +12,8 @@ import jwt_decode from "jwt-decode";
 
 import style from './signIn.css';
 
+import LoadingButton from '../Buttons/LoadingButton';
+
 
 //Images
 import logo from "../Layout/Navigation/assets/newLogo.png";
@@ -42,6 +44,8 @@ function SignIn() {
     
     const [errors, setErrors] = useState({});
 
+    const [loading, setLoading] = useState(false);
+
     const logUser = {
         Email: email,
         Psw: password,
@@ -61,6 +65,7 @@ function SignIn() {
 const loginUser = (e) => {
 
     e.preventDefault();
+    setLoading(true);
 
     axios
       .post("/api/users/login", logUser)
@@ -92,6 +97,7 @@ const loginUser = (e) => {
 
       })
       .catch(err => {
+        setLoading(false);
         const errors = err.response.data;
         setErrors(value => errors)
     
@@ -169,7 +175,7 @@ const onChange = (b,a) => {
                         </p>
                     </div>
                     <div className="snd-btn">
-                        <button>Submit</button>
+                        <LoadingButton loading={loading} loadingText="Signing in...">Submit</LoadingButton>
                     </div>
 
                 </form>
