@@ -5,6 +5,14 @@ const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
 const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
@@ -209,27 +217,18 @@ router.post("/enterclass", (req, res) => {
 
 
 
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'tadtech-profiles',
+    allowed_formats: ['jpg', 'jpeg', 'png']
+  }
+});
+
 const upload = multer({
-  storage: multer.diskStorage({
-    destination(req, file, cb) {
-      cb(null, './client/public/files');
-    },
-    filename(req, file, cb) {
-      cb(null, `${new Date().getTime()}_${file.originalname}`.replace(/\s/g, ''));
-    }
-  }),
+  storage: storage,
   limits: {
-    fileSize: 5000000 // max file size 1MB = 1000000 bytes
-  },
-  fileFilter(req, file, cb) {
-    if (!file.originalname.match(/\.(jpeg|jpg|png|pdf|doc|docx|xlsx|xls)$/)) {
-      return cb(
-        new Error(
-          'only upload files with jpg, jpeg, png, pdf, doc, docx, xslx, xls format.'
-        )
-      );
-    }
-    cb(undefined, true); // continue with upload
+    fileSize: 5000000 // max file size 5MB
   }
 });
 
@@ -242,7 +241,7 @@ router.post(
       .then(user => {
         console.log(req.file);
 
-        User.findOneAndUpdate({ _id: req.body.id }, { profileimage: req.file.filename }, { new: true })
+        User.findOneAndUpdate({ _id: req.body.id }, { profileimage: req.file.path }, { new: true })
           .then(fil => { console.log(req.file.filename); res.send("success") })
           .catch(err => { console.log(err) })
       })

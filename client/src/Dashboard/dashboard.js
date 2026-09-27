@@ -86,7 +86,7 @@ useEffect(() => {
                 <div className='reg-course'>
                     <h2>Profile Details</h2> <br /> <br />
                     {
-                user[0]?.profileimage?  <img className='prof-dpp' src={`/files/${user[0]?.profileimage}`}/> : <h1 className='dpp-alt'>{cookies.FirstName?.slice(0,1)}{cookies.LastName?.slice(0,1)}</h1>
+                user[0]?.profileimage?  <img className='prof-dpp' src={user[0]?.profileimage}/> : <h1 className='dpp-alt'>{cookies.FirstName?.slice(0,1)}{cookies.LastName?.slice(0,1)}</h1>
               }
                
                
