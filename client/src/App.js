@@ -1,4 +1,3 @@
-
 // React
 import ReactDOM from "react-dom/client";
 import { HashRouter, BrowserRouter, Routes, Route } from "react-router-dom";
@@ -7,6 +6,7 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 axios.defaults.baseURL = process.env.REACT_APP_API_URL || "";
+console.log("API Base URL is:", axios.defaults.baseURL);
 
 import { CookiesProvider } from "react-cookie";
 
@@ -74,8 +74,12 @@ function App() {
   const getNews = () => {
     axios.get("api/messages/fetchnews")
       .then((response) => {
-        // console.log(response.data.reverse())
-        setBlogPosts(response.data.reverse());
+        // Guard: only accept real arrays, otherwise keep blogPosts empty
+        if (Array.isArray(response.data)) {
+          setBlogPosts(response.data.reverse());
+        } else {
+          console.log("fetchnews did not return an array:", response.data);
+        }
       })
       .catch(err => {
         console.log(err)
@@ -92,8 +96,12 @@ function App() {
   const getMessages = () => {
     axios.get("api/messages/fetchmessages")
       .then((response) => {
-        // console.log(response.data)
-        setInstructorMessages(response.data);
+        // Guard: only accept real arrays, otherwise keep instructorMessages empty
+        if (Array.isArray(response.data)) {
+          setInstructorMessages(response.data);
+        } else {
+          console.log("fetchmessages did not return an array:", response.data);
+        }
       })
       .catch(err => {
         console.log(err);
@@ -106,7 +114,7 @@ function App() {
 
   useEffect(() => {
     getMessages();
-  }, [instructorMessages]);
+  }, []); // fixed: was [instructorMessages], which caused an infinite fetch loop
 
 
 
